@@ -1,0 +1,481 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header,
+nav,
+section,
+footer {
+    padding: 20px 0;
+}
+
+header .logo {
+    width: 150px;
+}
+
+.header-content {
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #007bff;
+}
+
+.hero {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 50px 0;
+    position: relative;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.cta-btn {
+    display: inline-block;
+    background-color: #fff;
+    color: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.hero-img {
+    width: 80%;
+    max-width: 600px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.features {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.features h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.features-list {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.features-list li {
+    font-size: 1.2rem;
+    margin: 10px;
+    padding: 15px;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.features-list li:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.footer {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer .footer-logo {
+    width: 100px;
+}
+
+.footer p {
+    font-size: 1rem;
+}
+
+/* Chatbot Popup */
+.chatbot-popup {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: none; /* Initially hidden */
+}
+
+.chatbot-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #007bff;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.chatbot-content {
+    display: flex;
+    align-items: center;
+}
+
+.chatbot-content p {
+    margin: 0;
+    padding-left: 10px;
+}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.dark-mode-icon {
+    width: 40px;
+    height: 40px;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #0c0f16; /* Dark blue background */
+    color: #fff; /* White text color */
+
+    /* Header */
+    header {
+        background-color: #1e272e; /* Dark gray background */
+    }
+
+    /* Navigation Links */
+    nav ul li a {
+        color: #00aaff; /* Blue color for links */
+        transition: color 0.3s ease; /* Smooth transition effect */
+    }
+
+    nav ul li a:hover {
+        color: #fff; /* White color on hover */
+    }
+
+    /* Hero Section */
+    .hero {
+        background-color: #08121b; /* Dark navy blue background */
+    }
+
+    /* Call to Action Button */
+    .cta-btn {
+        background-color: #00aaff; /* Blue color for button */
+        color: #fff; /* White text color */
+        transition: background-color 0.3s ease, color 0.3s ease; /* Transition for smooth change */
+    }
+
+    .cta-btn:hover {
+        background-color: #fff; /* White background on hover */
+        color: #00aaff; /* Blue text color on hover */
+    }
+
+    /* Key Features List Items */
+    .features-list li {
+        border-color: #00aaff; /* Blue color for border */
+        color: #fff; /* White text color */
+        transition: background-color 0.3s ease, color 0.3s ease; /* Adding transition */
+    }
+
+    .features-list li:hover {
+        background-color: #14374a; /* Darker navy blue background on hover */
+    }
+
+    /* Footer */
+    .footer {
+        background-color: #1e272e; /* Dark gray background */
+    }
+    .news-item {
+        background-color: #08121b;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Transition for smooth theme change */
+body,
+header,
+nav ul li a,
+.hero,
+.cta-btn,
+.features-list li,
+.footer {
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.news {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.news h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.news-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.news-item {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.news-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.news-item p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.news-item a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.news-item a:hover {
+    color: #0056b3;
+}
+
+/* Fix the image size here */
+.news-item img {
+    width: 100%;
+    height: auto;
+}
+/* Forum Section */
+.forum {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.forum h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.forum-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.forum-post {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.forum-post h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.forum-post p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.forum-post a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.forum-post a:hover {
+    color: #0056b3;
+}
+
+/* Forum Form */
+.forum-form {
+    text-align: left;
+    margin-top: 30px;
+}
+
+.forum-form label {
+    font-weight: bold;
+}
+
+.forum-form input[type="text"],
+.forum-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.forum-form input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.forum-form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .forum-content {
+        padding: 0 20px;
+    }
+}
+/* Forum Section */
+.forum {
+    padding: 50px 0;
+}
+
+.forum h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.forum p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.forum-topics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.forum-topic {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.forum-topic h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.forum-topic p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.forum-topic a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.forum-topic a:hover {
+    color: #0056b3;
+}
+
+/* Create Thread Button */
+.forum button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.forum button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .forum-topics {
+        grid-template-columns: 1fr;
+    }
+}

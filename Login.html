@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+  <div class="login-container">
+    <form class="login-form" action="#" method="POST">
+      <h2>Welcome Back!</h2>
+      <div class="input-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="input-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <button type="submit">Login</button>
+      <p class="signup-link">Don't have an account? <a href="#">Sign Up</a></p>
+    </form>
+    <div class="social-login">
+      <a href="#" id="google-signin-btn"><img src="google-logo.png" alt="Google"></a>
+      <a href="#" id="facebook-signin-btn"><img src="facebook-logo.png" alt="Facebook"></a>
+      <a href="#" id="twitter-signin-btn"><img src="twitter-logo.png" alt="Twitter"></a>
+      <a href="#" id="github-signin-btn"><img src="github-logo.png" alt="GitHub"></a>
+    </div>
+  </div>
+  
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="login.js"></script>
+</body>
+</html>

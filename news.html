@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeSpace - Latest News</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="logo.png" alt="SafeSpace Logo" class="logo">
+            <div class="header-content">
+                <h1>SafeSpace</h1>
+                <p>Empowering Workplace Transparency</p>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <ul class="container">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">About</a></li>
+            <li><a href="news.html">Latest News</a></li>
+            <li><a href="Fourm.html">Fourm</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+    <section class="news">
+        <div class="container">
+            <h2>Latest News</h2>
+            <div id="news-container" class="news-list">
+                <!-- News Items will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <img src="footer-logo.png" alt="SafeSpace Footer Logo" class="footer-logo">
+            <p>&copy; 2024 SafeSpace. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Chatbot Popup -->
+    <div id="chatbot-popup" class="chatbot-popup">
+        <img src="chatbot-icon.png" alt="Chatbot Icon" class="chatbot-icon">
+        <div class="chatbot-content">
+            <p>How may I help you?</p>
+        </div>
+    </div>
+
+    <!-- Dark Mode Toggle -->
+    <div id="dark-mode-toggle" class="dark-mode-toggle" onclick="toggleDarkMode()">
+        <img src="dark-mode-icon.png" alt="Dark Mode Toggle" class="dark-mode-icon">
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(showChatbotPopup, 5000); // Show chatbot popup after 5 seconds
+            // Check if dark mode preference exists in localStorage
+            const isDarkMode = localStorage.getItem('darkMode') === 'true';
+            // Apply dark mode if preference exists
+            if (isDarkMode) {
+                document.body.classList.add('dark-mode');
+            }
+
+            // Parse JSON data from the script tag
+            const jsonData = JSON.parse(document.getElementById('news-data').textContent);
+
+            // Get the news container
+            const newsContainer = document.getElementById('news-container');
+
+            // Loop through each news item
+            jsonData.forEach(newsItem => {
+                // Create a div for the news item
+                const newsDiv = document.createElement('div');
+                newsDiv.classList.add('news-item');
+
+                // Create elements for title, description, and link
+                const title = document.createElement('h3');
+                title.textContent = newsItem.title;
+
+                const description = document.createElement('p');
+                description.textContent = newsItem.description;
+
+                const link = document.createElement('a');
+                link.href = newsItem.link;
+                link.textContent = 'Read More';
+
+                const image = document.createElement('img');
+                image.src = newsItem.image;
+                image.alt = newsItem.title;
+
+                // Append image before the link
+                newsDiv.appendChild(image);
+
+                // Append elements to the news item div
+                newsDiv.appendChild(title);
+                newsDiv.appendChild(description);
+                newsDiv.appendChild(link);
+
+                // Append the news item div to the news container
+                newsContainer.appendChild(newsDiv);
+            });
+        });
+
+        function showChatbotPopup() {
+            var chatbotPopup = document.getElementById("chatbot-popup");
+            chatbotPopup.style.display = "block";
+        }
+
+        function toggleDarkMode() {
+            // Toggle dark mode class on body
+            document.body.classList.toggle('dark-mode');
+            // Store dark mode preference in localStorage
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDarkMode);
+        }
+    </script>
+
+    <script type="application/json" id="news-data">
+        [
+            {
+              "title": "Employee Concerns Grow Despite Limited AI Use in Workplaces",
+              "description": "A recent survey reveals growing concerns among employees regarding the impact of AI on job security, career progression, and the nature of work, despite its limited use in workplaces. Employers need to prioritize clear communication and address these anxieties as AI continues to develop.",
+              "link": "https://www.peoplematters.in/news/technology/employee-concerns-grow-despite-limited-ai-use-in-workspaces-survey-39868",
+              "image": "https://imgs.search.brave.com/MFC1RemLAuUQGjmLQDUaawcH3FGqoHYBi5RyX6YIhFk/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/c2hybS5vcmcvbGFu/Z3VhZ2UtbWFzdGVy/cy9lbi90b3BpY3Mt/dG9vbHMvbmV3cy90/ZWNobm9sb2d5L2Vt/cGxveWVycy13YW50/LW5ldy1ncmFkcy13/aXRoLWFpLWV4cGVy/aWVuY2UtLWtub3ds/ZWRnZS9famNyX2Nv/bnRlbnQvX2NxX2Zl/YXR1cmVkaW1hZ2Uu/Y29yZWltZy5wbmcv/MTcwODExODMzNjc1/Mi9haS13aGl0ZWJv/YXJkLWVuLnBuZw"
+            },
+            {
+              "title": "Shift Shock: How to Overcome and Thrive in Your New Job",
+              "description": "Discover tips for overcoming 'shift shock' in your new job, including effective communication with your manager, setting realistic expectations, and focusing on learning and development.",
+              "link": "https://indianexpress.com/article/lifestyle/workplace/shift-shock-in-your-new-job-heres-how-to-overcome-and-thrive-9244435/",
+              "image": "https://imgs.search.brave.com/10o4wLTiUGSRcFh2LQtmSnAYF70-9Eb2PhOkoTNOVzQ/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5saWNkbi5jb20v/ZG1zL2ltYWdlL0Q0/RTEyQVFHUWNxRzlM/ZllhTUEvYXJ0aWNs/ZS1jb3Zlcl9pbWFn/ZS1zaHJpbmtfNzIw/XzEyODAvMC8xNjY0/NDY1MzYyMzk2P2U9/MjE0NzQ4MzY0NyZ2/PWJldGEmdD12RGp5/d190ZzRRLVdEQ0h4/MG1YOHlIOTI4T3V2/Y2kxQWdGQ1FpNmpm/QWcw.jpeg"
+            },
+            {
+                "title": "Exploring Futuristic Employee Identification Methods",
+                "description": "Discover the potential benefits and concerns surrounding the exploration of implantable chips for employee identification.",
+                "link": "https://m.economictimes.com/prime/tag/workplace",
+                "image": "https://imgs.search.brave.com/Nl68bN7fhh4r5b33OIVkC_7wsp0I8fXUeVLFGfsSS9A/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5saWNkbi5jb20v/ZG1zL2ltYWdlL0M1/NjEyQVFFYjlxUWJT/UjJoRVEvYXJ0aWNs/ZS1jb3Zlcl9pbWFn/ZS1zaHJpbmtfNzIw/XzEyODAvMC8xNjE1/OTM0MzQzNjI0P2U9/MjE0NzQ4MzY0NyZ2/PWJldGEmdD1XUUVQ/U2l1ZzJqdjBTNkot/eGdkNVVzdDZXYl9a/NDVvUTk0cWQySHhR/cjk0.jpeg"
+            },        
+            {
+                "title": "Understanding Quiet Quitting in the Workplace",
+                "description": "Explore the phenomenon of 'quiet quitting,' where employees disengage and only fulfill minimum job requirements, and discover strategies for addressing it.",
+                "link": "https://www.forbes.com/sites/ashleystahl/2022/11/02/whats-really-happening-with-quiet-quitting/",
+                "image": "https://imgs.search.brave.com/tRP6kWnKCsBkD5FAEk99i2lqcogc7vJT5NiMnpX0jNY/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5saWNkbi5jb20v/ZG1zL2ltYWdlL0Q1/NjEyQVFGRmxlQUtU/YnZCQ0EvYXJ0aWNs/ZS1jb3Zlcl9pbWFn/ZS1zaHJpbmtfNzIw/XzEyODAvMC8xNjk3/NzgwNzc5MDQ5P2U9/MjE0NzQ4MzY0NyZ2/PWJldGEmdD1GNGJv/dW5jc1ozNFd3R28w/M1BRUUVMT3dqOHNj/b09nS0Q3T0RhTEVQ/TkNv.jpeg"
+            },
+            {
+                "title": "Embracing the Four-Day Workweek",
+                "description": "Learn about the rise of the four-day workweek as more companies experiment with maintaining productivity while providing employees with an extra day off.",
+                "link": "https://www.bbc.com/worklife/article/20230125-how-widespread-could-the-four-day-workweek-really-be",
+                "image": "https://imgs.search.brave.com/WgVeeo5RGun_Kq8XljmRh1OxvAB31p7CZEQo8Iv4opI/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5saWNkbi5jb20v/ZG1zL2ltYWdlL0Q0/RTEyQVFIeHNmQ0ox/Sjk2T1EvYXJ0aWNs/ZS1jb3Zlcl9pbWFn/ZS1zaHJpbmtfNjAw/XzIwMDAvMC8xNjk5/OTY3Mzg5MjgyP2U9/MjE0NzQ4MzY0NyZ2/PWJldGEmdD1wU0li/THktZm1rMFdoeGFk/eGFMdEs5djNlR2k4/S1JaV0JyWFN5VEhE/emhJ"
+            },
+            {
+                "title": "Financial Literacy Training for New Graduates",
+                "description": "Discover the importance of financial literacy training for new graduates amidst rising student loan debt, ensuring they're equipped to make informed financial decisions as they enter the workforce.",
+                "link": "https://www.shrm.org/topics-tools/news",
+                "image": "https://imgs.search.brave.com/Wz4HdYUJzhzn_2Mebc1QHnwywiI4VCBbEwI87_jP6AM/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9oc2lh/c3NldHN0b3JhZ2Uu/c2ZvMi5kaWdpdGFs/b2NlYW5zcGFjZXMu/Y29tL3RyYW5zZm9y/bXMvYmxvZ2ltYWdl/cy8zMDUzODkvQ29t/bXVuaWNhdGluZy13/aXRoLUVtb3Rpb25h/bC1JbnRlbGxpZ2Vu/Y2UtSGVyby1JbWFn/ZS1IU0lfMjAyMy0w/Ni0wNy0xNDAzNDVf/enNua19kNzIzZjgw/NjkzYmUyMjQ4ZDJl/OGU3ZTAyNGVmN2Ew/OC5qcGc"
+            },
+            {
+                "title": "The Rise of Coworking Spaces",
+                "description": "Learn about the growth of coworking spaces, providing startups and individuals with flexible and cost-effective workspace solutions, contributing to the expansion of the gig economy and remote work arrangements.",
+                "link": "https://www.financialexpress.com/about/workplace/",
+                "image": "https://imgs.search.brave.com/6YEy1VzybxL8i66Rr_q9pGlQHlayxA1OJG_5FOhVk0I/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5saWNkbi5jb20v/ZG1zL2ltYWdlL0Q0/RDEyQVFGcE1ETGRI/T1ZjVWcvYXJ0aWNs/ZS1jb3Zlcl9pbWFn/ZS1zaHJpbmtfNzIw/XzEyODAvMC8xNjg4/MzgxMzMwMDE5P2U9/MjE0NzQ4MzY0NyZ2/PWJldGEmdD10a0JZ/eHlNRXE1dUZTUTZB/TXZxVE9PdHRrTzkx/WmNEQWpNOFI0akt0/aXZz.jpeg"
+            },
+            {
+                "title": "Strategies for Bridging the Gender Pay Gap",
+                "description": "Explore actionable strategies for companies to close the gender pay gap and promote workplace equality by ensuring equal pay for equal work.",
+                "link": "https://www.shrm.org/topics-tools/news",
+                "image": "https://www.shrm.org/adobe/dynamicmedia/deliver/dm-aid--16fcc067-8d57-49f4-9ffb-7ba54fb58a96/istock-1447036217.jpg?preferwebp=true&width=1400&quality=82"
+            }
+        ]
+    </script>
+</body>
+</html>
